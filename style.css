@@ -603,6 +603,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1em;
+}
+
+#footer a {
+  text-decoration: none;
+}
+
+#footer .fab {
+  color: var(--text-color);
+  font-size: 1.5rem;
 }
 
 @media (max-width: 426px) {
