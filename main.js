@@ -35,7 +35,6 @@ const scrollingObserveOption = {
 };
 
 const observeScrolling = new IntersectionObserver((e) => {
-  console.log(e);
   scrollingCirTxtAnimation(e[0].intersectionRatio);
 }, scrollingObserveOption);
 
