@@ -216,8 +216,9 @@ body {
 
 @media (max-width: 426px) {
   #navigation {
-    inset: 5px auto 50% 5px;
+    inset: 5px auto auto 5px;
     width: 30px;
+    height: 150px;
   }
   #nav-btn {
     height: 30px;

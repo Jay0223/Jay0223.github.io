@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jay0223/Jay0223.github.io.git"
+  },
+  "author": "Jay",
+  "license": "MIT",
+  "homepage": "https://github.com/Jay0223",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
