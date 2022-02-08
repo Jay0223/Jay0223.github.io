@@ -4,6 +4,14 @@ Click [here](https://jay0223.github.io/#contact) to shoot me a message and tell 
 
 ### Major Updates Log
 
+- Feb.7 2022
+
+1. First uploaded project. An easy site clone. [Check it out](https://jay0223.github.io/portfolioClone/).
+
+![site clone](./img/clone-portfolio1-cover.jpg)
+
+2. Inspired by [Dennis Ivanov](http://dennisivy-portfolio.s3-website-us-west-2.amazonaws.com/)
+
 - Jan. 27 2022
 
 1. Portfolio landing page launched.

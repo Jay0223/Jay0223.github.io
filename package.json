@@ -12,6 +12,7 @@
   "license": "MIT",
   "homepage": "https://github.com/Jay0223",
   "devDependencies": {
-    "node-sass": "^7.0.1"
-  }
+    "sass": "^1.49.7"
+  },
+  "dependencies": {}
 }

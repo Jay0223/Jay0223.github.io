@@ -1,0 +1,34 @@
+:root {
+  --primary-bg: #000;
+  --secondary-bg: #333;
+  --card-bg: #111921;
+  --border-color: #17a2b8;
+  --btn-color: #17a2b8;
+  --txt-color: #fff;
+}
+
+.neon {
+  animation: neon 1s linear infinite alternate;
+  position: relative;
+}
+
+.neon::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  background-color: var(--txt-color);
+  opacity: 0.3;
+  filter: blur(40px);
+}
+
+@keyframes neon {
+  from {
+    text-shadow: none;
+  }
+  to {
+    text-shadow: 0 0 60px;
+  }
+}
