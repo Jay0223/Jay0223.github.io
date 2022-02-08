@@ -6,7 +6,7 @@ Click [here](https://jay0223.github.io/#contact) to shoot me a message and tell 
 
 - Feb.7 2022
 
-1. First uploaded project. An easy site clone. [Check it out](https://jay0223.github.io/portfolioClone/).
+1. First uploaded project. An easy site clone. [Check it out](https://jay0223.github.io/portfolioclone/).
 
 ![site clone](./img/clone-portfolio1-cover.jpg)
 
