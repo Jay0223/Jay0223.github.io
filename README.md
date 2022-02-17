@@ -4,6 +4,12 @@ Click [here](https://jay0223.github.io/#contact) to shoot me a message and tell 
 
 ### Major Updates Log
 
+- Feb.17 2022
+
+1. Designed a website for Chinese restaurant. [Check it out](https://jay0223.github.io/restaurant/).
+
+![chinese restaurant](./img/restaurants-cover.jpg)
+
 - Feb.7 2022
 
 1. First uploaded project. An easy site clone. [Check it out](https://jay0223.github.io/portfolioclone/).

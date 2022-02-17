@@ -1,0 +1,82 @@
+@use "config" as c;
+@use "nav";
+@use "break-point" as *;
+
+.dishes-container {
+  width: 100%;
+  padding: 2.5em 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  place-items: center;
+  gap: 20px;
+  .dish-item {
+    width: 300px;
+    margin: 0 auto;
+    img {
+      border: 1px solid c.$theme-color;
+    }
+    .order-item {
+      display: flex;
+      position: relative;
+      %item-template {
+        height: 30px;
+        text-align: center;
+      }
+      .order-plus,
+      .order-minus {
+        @extend %item-template;
+        width: 30px;
+        background-color: c.$theme-color;
+        font-size: 1.2em;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .order-amount {
+        @extend %item-template;
+        width: 150px;
+        border: none;
+        outline: none;
+      }
+      .add-to-order {
+        @extend %item-template;
+        width: 30px;
+        cursor: pointer;
+        line-height: 30px;
+        font-size: 1.2em;
+        font-weight: 800;
+        background-color: c.$theme-color;
+        margin-left: auto;
+      }
+      %order-msg {
+        @extend %item-template;
+        position: absolute;
+        inset: 0;
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        display: none;
+      }
+      .order-clear {
+        @extend %order-msg;
+        border-color: red;
+        color: red;
+        background-color: salmon;
+      }
+      .order-added {
+        @extend %order-msg;
+        border-color: green;
+        color: green;
+        background-color: lightgreen;
+      }
+    }
+  }
+  @include mq(tablet) {
+    padding: 2.5em 0;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    .dish-item {
+      width: 250px;
+    }
+  }
+}

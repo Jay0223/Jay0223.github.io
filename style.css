@@ -84,6 +84,10 @@ body {
   background-color: #ef652a;
 }
 
+.sass-tag {
+  background-color: #cc6699;
+}
+
 .special-tag {
   background-color: #0093b8;
 }

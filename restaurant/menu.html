@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panda Garden | Menu</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../img/chinesefood.ico"
+    />
+    <link rel="stylesheet" href="menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer type="module" src="menu.js"></script>
+  </head>
+  <body>
+    <!-- copy for nav menu -->
+    <nav>
+      <ul class="nav-links">
+        <li class="cart-number"><a href="cart.html"></a></li>
+        <li class="nav-link"><a href="index.html">Home</a></li>
+        <li class="nav-link current-page"><a href="menu.html">Menu</a></li>
+        <li class="nav-link"><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="container">
+        <h1 class="secondary-title">
+          Our <span class="hightlight-txt">Menu</span>
+        </h1>
+        <p class="secondary-banner">What are you craving for...</p>
+        <div class="dishes-container">
+          <div class="dish-item">
+            <img src="../img/lamb.jpg" alt="lamb" title="Lamb" />
+            <div class="order-item" data-dish="Lamb">
+              <div class="order-plus">+</div>
+              <input type="number" class="order-amount" min="0" readonly />
+              <div class="order-minus">-</div>
+              <i class="add-to-order fa-solid fa-cart-arrow-down"></i>
+              <p class="order-clear">Order Cleared ...</p>
+              <p class="order-added">Added to Order!</p>
+            </div>
+          </div>
+          <div class="dish-item">
+            <img src="../img/eggplant.jpg" alt="eggplant" title="Eggplant" />
+            <div class="order-item" data-dish="Eggplant">
+              <div class="order-plus">+</div>
+              <input type="number" class="order-amount" min="0" readonly />
+              <div class="order-minus">-</div>
+              <i class="add-to-order fa-solid fa-cart-arrow-down"></i>
+              <p class="order-clear">Order Cleared ...</p>
+              <p class="order-added">Added to Order!</p>
+            </div>
+          </div>
+          <div class="dish-item">
+            <img src="../img/crab.jpg" alt="crab" title="Crab" />
+            <div class="order-item" data-dish="Crab">
+              <div class="order-plus">+</div>
+              <input type="number" class="order-amount" min="0" readonly />
+              <div class="order-minus">-</div>
+              <i class="add-to-order fa-solid fa-cart-arrow-down"></i>
+              <p class="order-clear">Order Cleared ...</p>
+              <p class="order-added">Added to Order!</p>
+            </div>
+          </div>
+          <div class="dish-item">
+            <img src="../img/noodle.jpg" alt="noodle" title="Noodle" />
+            <div class="order-item" data-dish="Noodle">
+              <div class="order-plus">+</div>
+              <input type="number" class="order-amount" min="0" readonly />
+              <div class="order-minus">-</div>
+              <i class="add-to-order fa-solid fa-cart-arrow-down"></i>
+              <p class="order-clear">Order Cleared ...</p>
+              <p class="order-added">Added to Order!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

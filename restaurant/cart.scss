@@ -1,0 +1,63 @@
+@use "config" as c;
+@use "nav";
+@use "break-point" as *;
+
+.order-details {
+  margin: 3em 1.5em 0;
+  padding: 1em;
+  border: 1px solid c.$theme-color;
+  border-radius: 10px;
+  background-color: rgba(#000, 0.3);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  justify-content: space-around;
+  place-items: center;
+  gap: 1.5em;
+  .order-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    img {
+      border: 1px solid c.$theme-color;
+      border-radius: 50%;
+    }
+  }
+  .order-total {
+    grid-column: 1 / -1;
+    color: greenyellow;
+  }
+  .seperator {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 2px;
+    background-color: c.$text-color;
+  }
+  .order-btns {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5px;
+    %order-btns {
+      padding: 0.3em 0.5em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .clear-cart-btn {
+      @extend %order-btns;
+      background-color: red;
+    }
+    .check-out-btn {
+      @extend %order-btns;
+      background-color: green;
+    }
+  }
+  @include mq(phone) {
+    margin: 2em 0;
+    .order-item {
+      width: 80%;
+    }
+  }
+}

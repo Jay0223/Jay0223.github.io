@@ -192,9 +192,13 @@ header .window-right .preview .left-bottom {
   header .window-right {
     grid-column: span 2;
   }
+  header .window-left {
+    border-right: 1px solid var(--border-color);
+  }
   header .window-right {
     justify-content: center;
     padding-bottom: 3em;
+    border-left: 1px solid var(--border-color);
   }
   header .window-right .preview {
     transform: translate(10%, 10%);

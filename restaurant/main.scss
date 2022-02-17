@@ -1,0 +1,27 @@
+@use "config" as c;
+@use "nav";
+@use "break-point" as *;
+
+main .container {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  .social-links {
+    display: flex;
+    gap: 15px;
+    font-size: 2em;
+    & > * {
+      cursor: pointer;
+      &:hover {
+        color: c.$theme-color;
+      }
+    }
+    @include mq(phone) {
+      gap: 7px;
+      font-size: 1.2em;
+    }
+  }
+}
