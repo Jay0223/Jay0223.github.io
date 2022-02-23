@@ -1,5 +1,17 @@
 "use strict";
 
+const cartIcon = document.querySelector(".cart-number a");
+const order = localStorage.getItem("orderDetails")
+  ? JSON.parse(localStorage.getItem("orderDetails"))
+  : {};
+
+console.log("from menu.js");
+console.log(order);
+console.log(localStorage.getItem("orderDetails"));
+console.log(Object.values(order));
+
+cartIcon.textContent = calDishesOrdered();
+
 const orderItems = document.querySelectorAll(".order-item");
 orderItems.forEach((ele) => {
   ele.addEventListener("click", orderEventHandler);
@@ -36,24 +48,34 @@ function addToCart(ele) {
   const dishName = ele.closest(".order-item").dataset.dish;
   if (inputNum > 0) {
     showSuccessMsg(ele);
+    console.log(order);
     order[dishName] = inputNum;
+    console.log(order);
     localStorage.setItem("orderDetails", JSON.stringify(order));
-    updateNumberInCart(order);
+    updateNumberInCart();
   } else {
     showClearMsg(ele);
+    console.log(order);
     delete order[dishName];
+    console.log(order);
     localStorage.setItem("orderDetails", JSON.stringify(order));
-    updateNumberInCart(order);
+    updateNumberInCart();
   }
 }
 
-function updateNumberInCart(order) {
-  const dishesOrdered = calDishesOrdered(order);
+function updateNumberInCart() {
+  const dishesOrdered = calDishesOrdered();
   cartIcon.textContent = dishesOrdered;
   cartIcon.classList.add("edited");
   setTimeout(() => {
     cartIcon.classList.remove("edited");
   }, 1000);
+}
+
+function calDishesOrdered() {
+  let dishesOrdered = 0;
+  Object.values(order).forEach((v) => (dishesOrdered += v));
+  return dishesOrdered;
 }
 
 function showClearMsg(ele) {
