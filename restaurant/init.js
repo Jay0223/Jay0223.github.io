@@ -21,3 +21,5 @@ export function updateNumberInCart() {
 }
 
 cartIcon.textContent = calDishesOrdered();
+
+console.log("from init");

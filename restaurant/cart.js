@@ -31,6 +31,7 @@ function clearCart() {
 
 function displayOrder() {
   console.log(order);
+  console.log(Object.keys(order).length);
   orderDetailsEle.innerHTML = "";
   if (Object.keys(order).length === 0) {
     orderDetailsEle.insertAdjacentHTML(
