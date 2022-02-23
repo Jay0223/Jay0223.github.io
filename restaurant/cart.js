@@ -1,10 +1,5 @@
 "use strict";
 
-import { order, updateNumberInCart } from "./init.js";
-
-console.log("from cart order:");
-console.log(order);
-
 const dishPrice = {
   Lamb: 35,
   Eggplant: 15,
@@ -29,14 +24,19 @@ orderDetailsEle.addEventListener("click", (e) => {
 function clearCart() {
   for (const k of Object.keys(order)) delete order[k];
   localStorage.setItem("orderDetails", JSON.stringify(order));
-  updateNumberInCart();
+  updateNumberInCart(order);
+}
+
+function updateNumberInCart(order) {
+  const dishesOrdered = calDishesOrdered(order);
+  cartIcon.textContent = dishesOrdered;
+  cartIcon.classList.add("edited");
+  setTimeout(() => {
+    cartIcon.classList.remove("edited");
+  }, 1000);
 }
 
 function displayOrder() {
-  console.log("from inside displayOrder:order");
-  console.log(order);
-  console.log("keys:");
-  console.log(Object.keys(order));
   orderDetailsEle.innerHTML = "";
   if (Object.keys(order).length === 0) {
     orderDetailsEle.insertAdjacentHTML(

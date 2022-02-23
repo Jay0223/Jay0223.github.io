@@ -1,7 +1,5 @@
 "use strict";
 
-import { order, updateNumberInCart } from "./init.js";
-
 const orderItems = document.querySelectorAll(".order-item");
 orderItems.forEach((ele) => {
   ele.addEventListener("click", orderEventHandler);
@@ -40,13 +38,22 @@ function addToCart(ele) {
     showSuccessMsg(ele);
     order[dishName] = inputNum;
     localStorage.setItem("orderDetails", JSON.stringify(order));
-    updateNumberInCart();
+    updateNumberInCart(order);
   } else {
     showClearMsg(ele);
     delete order[dishName];
     localStorage.setItem("orderDetails", JSON.stringify(order));
-    updateNumberInCart();
+    updateNumberInCart(order);
   }
+}
+
+function updateNumberInCart(order) {
+  const dishesOrdered = calDishesOrdered(order);
+  cartIcon.textContent = dishesOrdered;
+  cartIcon.classList.add("edited");
+  setTimeout(() => {
+    cartIcon.classList.remove("edited");
+  }, 1000);
 }
 
 function showClearMsg(ele) {
