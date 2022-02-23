@@ -30,6 +30,7 @@ function clearCart() {
 }
 
 function displayOrder() {
+  console.log(123);
   orderDetailsEle.innerHTML = "";
   if (Object.keys(order).length === 0) {
     orderDetailsEle.insertAdjacentHTML(
