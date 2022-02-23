@@ -5,6 +5,9 @@ export const order = localStorage.getItem("orderDetails")
   ? JSON.parse(localStorage.getItem("orderDetails"))
   : {};
 
+console.log("from init order:");
+console.log(order);
+
 function calDishesOrdered() {
   let dishesOrdered = 0;
   Object.values(order).forEach((v) => (dishesOrdered += v));
@@ -21,5 +24,3 @@ export function updateNumberInCart() {
 }
 
 cartIcon.textContent = calDishesOrdered();
-
-console.log("from init");

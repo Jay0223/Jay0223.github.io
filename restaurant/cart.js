@@ -2,6 +2,9 @@
 
 import { order, updateNumberInCart } from "./init.js";
 
+console.log("from cart order:");
+console.log(order);
+
 const dishPrice = {
   Lamb: 35,
   Eggplant: 15,
@@ -30,8 +33,10 @@ function clearCart() {
 }
 
 function displayOrder() {
+  console.log("from inside displayOrder:order");
   console.log(order);
-  console.log(Object.keys(order).length);
+  console.log("keys:");
+  console.log(Object.keys(order));
   orderDetailsEle.innerHTML = "";
   if (Object.keys(order).length === 0) {
     orderDetailsEle.insertAdjacentHTML(
