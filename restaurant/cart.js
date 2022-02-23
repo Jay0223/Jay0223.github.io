@@ -1,16 +1,6 @@
 "use strict";
 
-const cartIcon = document.querySelector(".cart-number a");
-const order = localStorage.getItem("orderDetails")
-  ? JSON.parse(localStorage.getItem("orderDetails"))
-  : {};
-
-console.log("from cart.js");
-console.log(order);
-console.log(localStorage.getItem("orderDetails"));
-console.log(Object.values(order));
-
-cartIcon.textContent = calDishesOrdered();
+import { order, updateNumberInCart } from "./init.js";
 
 const dishPrice = {
   Lamb: 35,
@@ -37,21 +27,6 @@ function clearCart() {
   for (const k of Object.keys(order)) delete order[k];
   localStorage.setItem("orderDetails", JSON.stringify(order));
   updateNumberInCart();
-}
-
-function updateNumberInCart() {
-  const dishesOrdered = calDishesOrdered();
-  cartIcon.textContent = dishesOrdered;
-  cartIcon.classList.add("edited");
-  setTimeout(() => {
-    cartIcon.classList.remove("edited");
-  }, 1000);
-}
-
-function calDishesOrdered() {
-  let dishesOrdered = 0;
-  Object.values(order).forEach((v) => (dishesOrdered += v));
-  return dishesOrdered;
 }
 
 function displayOrder() {
