@@ -18,6 +18,9 @@ function displayContent() {
   contentEle.innerHTML = "";
   const content = localStorage.getItem("content") || "There is no paragraph.";
   contentEle.innerHTML = content;
+  console.log("from displayContent function");
+  console.log(`content: ${content}`);
+  console.log(`localStorage: ${localStorage.getItem("content")}`);
 }
 
 displayContent();
