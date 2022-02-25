@@ -19,6 +19,7 @@ orderDetailsEle.addEventListener("click", (e) => {
   }
   if (e.target.classList.contains("check-out-btn")) {
     clearCart();
+    displayOrder();
     location.href = "index.html";
   }
 });
