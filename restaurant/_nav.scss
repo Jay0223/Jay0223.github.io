@@ -1,0 +1,59 @@
+@use "config" as c;
+@use "break-point" as *;
+
+nav {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  right: 25px;
+  font-size: 1.2rem;
+  .nav-links {
+    display: flex;
+    gap: 10px;
+    li {
+      position: relative;
+    }
+    a {
+      padding: 0.2em 0.5em;
+    }
+    .edited {
+      animation: orderEdited 1s linear;
+    }
+    %link-after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -2px 0;
+      height: 2px;
+    }
+    .cart-number::after {
+      @extend %link-after;
+      background-color: c.$text-color;
+    }
+    .current-page::after {
+      @extend %link-after;
+      background-color: c.$theme-color;
+    }
+  }
+  @include mq(phone) {
+    top: 10px;
+    right: 15px;
+    font-size: 1rem;
+    .nav-links {
+      gap: 5px;
+    }
+    a {
+      padding: 0.2em;
+    }
+  }
+}
+
+@keyframes orderEdited {
+  50% {
+    color: c.$theme-color;
+    transform: scale(1.2);
+  }
+  100% {
+    color: c.$text-color;
+    transform: scale(1);
+  }
+}

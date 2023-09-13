@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jay's personal web development portfolio. Check out what he's been up to!"
+    />
+    <title>Jay Wu's Web Development Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/bb845f159f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <nav id="navigation">
+      <input type="checkbox" id="nav-checkbox" />
+      <label for="nav-checkbox">
+        <div id="nav-btn">
+          <div id="nav-btn-layer"></div>
+        </div>
+      </label>
+      <ul id="nav-list">
+        <li class="nav-item">
+          <a href="#showcase"><i class="fas fa-arrow-alt-circle-up"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#about"><i class="fas fa-address-card"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#works"><i class="fas fa-code"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact"><i class="fas fa-envelope"></i></a>
+        </li>
+      </ul>
+    </nav>
+    <section id="showcase">
+      <div id="welcome-text">
+        <h1 class="primary-title">Hi, I'm Jay.</h1>
+        <h2 class="secondary-title">Welcome to my portfolio</h2>
+      </div>
+      <div id="outer-circle" class="scrolling-circle"></div>
+      <div id="middle-circle" class="scrolling-circle"></div>
+      <div id="inner-circle" class="scrolling-circle"></div>
+      <div id="scrolling-text">Scroll Down...</div>
+    </section>
+    <section id="about">
+      <div class="container">
+        <h1 class="primary-title section-title">Who Am I</h1>
+        <h2 class="secondary-title section-lead">
+          Husband, Father, Son, Dog Owner and Web Developer
+        </h2>
+        <img id="about-image" src="./img/aboutme.jpg" alt="about me" />
+        <p id="about-details">
+          Hi there! I'm Jay Wu, a self-taught web developer. I like coding,
+          music, video games and everything I do together with my family. I'm
+          constantly learning and updating my portfolio. Hopefully this will
+          become something I'm proud of. Don't forget to come back and check out
+          for more!
+          <br />
+          <br />
+          Feel free to reach me out for anything: jobs, questions, suggestions
+          or even just to say Hi. I will get back to you.
+          <br />
+          <br />
+          Never stop coding. Never stop learning.
+        </p>
+      </div>
+    </section>
+    <section id="works">
+      <div class="container">
+        <h1 class="primary-title section-title">My Works</h1>
+        <h2 class="secondary-title section-lead">More are coming ...</h2>
+        <div class="work-item">
+          <a
+            href="https://jay0223.github.io/portfolioclone/"
+            target="_blank"
+            class="work-item-cover"
+            data-name="Portfolio Clone"
+          >
+            <img
+              src="./img/clone-portfolio1-cover.jpg"
+              alt="Portfolio Clone Project 1"
+            />
+          </a>
+          <a
+            href="https://github.com/Jay0223/Jay0223.github.io/tree/master/portfolioclone"
+            target="_blank"
+            class="work-item-github"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <div class="work-item-tags-container">
+            <span class="work-item-tag clone-tag">#clone</span>
+            <span class="work-item-tag responsive-tag">#responsive</span>
+            <span class="work-item-tag special-tag">#modeSwitch</span>
+            <span class="work-item-tag special-tag-alt">#neon</span>
+          </div>
+        </div>
+        <div class="work-item">
+          <a
+            href="https://jay0223.github.io/restaurant/"
+            target="_blank"
+            class="work-item-cover"
+            data-name="Chinese Restaurant"
+          >
+            <img src="./img/restaurants-cover.jpg" alt="Chinese Restaurant" />
+          </a>
+          <a
+            href="https://github.com/Jay0223/Jay0223.github.io/tree/master/restaurant"
+            target="_blank"
+            class="work-item-github"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <div class="work-item-tags-container">
+            <span class="work-item-tag design-tag">#design</span>
+            <span class="work-item-tag responsive-tag">#responsive</span>
+            <span class="work-item-tag special-tag">#shoppingCart</span>
+            <span class="work-item-tag sass-tag">#sass</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h1 class="primary-title section-title">Contact Me</h1>
+        <h2 class="secondary-title section-lead">
+          What do you think? Let's talk.
+        </h2>
+        <form action="" id="contact-form">
+          <div class="input-group">
+            <input
+              type="text"
+              name="name"
+              id="contact-name"
+              placeholder="Name"
+            />
+            <p class="input-empty-warning">Hello stranger ...</p>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              name="email"
+              id="contact-email"
+              placeholder="Email"
+            />
+            <p class="input-empty-warning">I promise I won't spam you!</p>
+          </div>
+          <div class="input-group">
+            <textarea
+              name="message"
+              id="contact-message"
+              placeholder="Message"
+            ></textarea>
+            <p class="input-empty-warning">What can I do for you?</p>
+          </div>
+          <button id="contact-send">Send</button>
+        </form>
+        <img id="contact-image" src="./img/contactme.jpg" alt="contact me" />
+      </div>
+    </section>
+    <footer id="footer">
+      <p>Code and Design by Jie Wu</p>
+      <p>&nbsp;|&nbsp;</p>
+      <a href="https://github.com/Jay0223" target="_blank"
+        ><i class="fab fa-github"></i
+      ></a>
+    </footer>
+  </body>
+</html>

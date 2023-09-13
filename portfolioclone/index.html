@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link class="dark-theme-style" rel="stylesheet" href="" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="title greeting neon">Hi, I'm Jay Wu</h1>
+      <div class="window-control-bar">
+        <div class="dot red-dot"></div>
+        <div class="dot yellow-dot"></div>
+        <div class="dot green-dot"></div>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="window-left">
+        <img src="../img/face1.jpg" alt="face" />
+        <h3 class="theme-choices title">Choose your theme here</h3>
+        <div class="theme-btns">
+          <div class="theme-btn theme-light">Light</div>
+          <div class="theme-btn theme-dark">Dark</div>
+        </div>
+      </div>
+      <div class="window-right">
+        <div class="preview-wrap card">
+          <div class="preview">
+            <h3 class="title">What I do</h3>
+            <p>I study web development skills and build aweswome website.</p>
+            <div class="corner left-top"></div>
+            <div class="corner right-top"></div>
+            <div class="corner right-bottom"></div>
+            <div class="corner left-bottom"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="more-info">
+      <div class="container">
+        <div class="self-intro">
+          <h3 class="title">More about me</h3>
+          <p>
+            I build new projects just to tickle my brain and love teaching
+            others how they're made.
+          </p>
+          <br />
+          <p>
+            While I keep busy teaching courses, I still take interviews in
+            search of a great team & projects that interest me.
+          </p>
+          <br />
+          <hr />
+        </div>
+        <div class="expertise">
+          <h3 class="title">Top Expertise</h3>
+          <p>Fullstack developer with primary focus on Django + React:</p>
+          <br />
+          <div class="expertise-card card">
+            <span>HTML</span>
+            <span>CSS</span><span>Sass</span><span>Javascript</span
+            ><span>React</span><span>Vue</span><span>Agular</span
+            ><span>Node.js</span><span>Express</span><span>Mango DB</span>
+          </div>
+        </div>
+
+        <div class="social-info">
+          <img src="../img/socialmedia.jpg" alt="social media" />
+          <h3 class="title">Find me on Twitter & Youtube</h3>
+          <p>YouTube: @DennisIvy</p>
+          <p>Twitter: @DennisIvy</p>
+        </div>
+      </div>
+    </section>
+    <section class="projects">
+      <div class="container">
+        <h2 class="title">Some of my past projects</h2>
+        <div class="project-card">
+          <img src="../img/project1.jpg" alt="project1" />
+          <div class="project-desc">
+            <h3 class="title">Project 1</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              quibusdam nesciunt pariatur excepturi nobis tempore ducimus error
+              ullam eaque praesentium sint molestiae distinctio laudantium in
+              obcaecati, ipsam, quod eum magnam.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="../img/project2.jpg" alt="project2" />
+          <div class="project-desc">
+            <h3 class="title">Project 2</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              quibusdam nesciunt pariatur excepturi nobis tempore ducimus error
+              ullam eaque praesentium sint molestiae distinctio laudantium in
+              obcaecati, ipsam, quod eum magnam.
+            </p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="../img/project3.jpg" alt="project3" />
+          <div class="project-desc">
+            <h3 class="title">Project 3</h3>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              quibusdam nesciunt pariatur excepturi nobis tempore ducimus error
+              ullam eaque praesentium sint molestiae distinctio laudantium in
+              obcaecati, ipsam, quod eum magnam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="container">
+        <h3 class="title">Get In Touch</h3>
+        <form class="contact-form">
+          <div class="inputgroup">
+            <label for="name">Name</label>
+            <input type="text" id="name" />
+          </div>
+          <div class="inputgroup">
+            <label for="subject">Subject</label>
+            <input type="text" id="Subject" />
+          </div>
+          <div class="inputgroup">
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+          </div>
+          <div class="inputgroup">
+            <label for="message">Message</label>
+            <textarea id="message"></textarea>
+          </div>
+          <button id="submitBtn">Send</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      Code by Jay. Inspired by
+      <a
+        href="http://dennisivy-portfolio.s3-website-us-west-2.amazonaws.com/"
+        target="_blank"
+        >Dennis Ivanov</a
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+@use "break-point" as *;
+
+$text-color: #fff;
+$theme-color: #eece1a;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  color: $text-color;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  background-image: url("../img/chinesefood1.jpg");
+  background-size: 100vw auto;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+  @media (max-aspect-ratio: 3/2) {
+    background-size: auto 100vh;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(#333, 0.8);
+    z-index: -1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 50px 3rem;
+  @include mq(tablet) {
+    padding: 50px 1.5rem;
+  }
+}
+
+.primary-title {
+  font-size: 3em;
+  font-weight: 600;
+  @include mq(phone) {
+    font-size: 2em;
+  }
+}
+
+.primary-banner {
+  font-size: 1.5em;
+  @include mq(phone) {
+    font-size: 1.2em;
+  }
+}
+.secondary-title {
+  font-size: 2em;
+  font-weight: 600;
+  @include mq(phone) {
+    font-size: 1.2em;
+  }
+}
+
+.secondary-banner {
+  font-size: 1.2em;
+  @include mq(phone) {
+    font-size: 1em;
+  }
+}
+
+.hightlight-txt {
+  color: $theme-color;
+}
