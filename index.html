@@ -11,11 +11,19 @@
     <title>Jay Wu's Web Development Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <!-- fontawesome -->
     <script
       src="https://kit.fontawesome.com/bb845f159f.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Load EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
     <script defer src="main.js"></script>
+    <script defer src="form_submit.js"></script>
   </head>
   <body>
     <nav id="navigation">
@@ -138,16 +146,18 @@
           <div class="input-group">
             <input
               type="text"
-              name="name"
+              name="from_name"
               id="contact-name"
               placeholder="Name"
             />
-            <p class="input-empty-warning">Hello stranger ...</p>
+            <p class="input-empty-warning">
+              Hello stranger! May I know your name?
+            </p>
           </div>
           <div class="input-group">
             <input
-              type="text"
-              name="email"
+              type="email"
+              name="reply_to"
               id="contact-email"
               placeholder="Email"
             />
@@ -159,7 +169,7 @@
               id="contact-message"
               placeholder="Message"
             ></textarea>
-            <p class="input-empty-warning">What can I do for you?</p>
+            <p class="input-empty-warning">Please tell me what do you think.</p>
           </div>
           <button id="contact-send">Send</button>
         </form>
