@@ -2,9 +2,9 @@
 
 :root {
   /* color */
-  --primary-color: #333;
-  --secondary-color: #292929;
-  --minor-color: #ffdf00;
+  --background-color-1: #303030;
+  --background-color-2: #1b1c1e;
+  --decorative-color: #ffdf00;
   --text-color: #fbf7ef;
   /* font:; */
   --main-font: "Roboto", sans-serif;
@@ -47,7 +47,7 @@ body {
 
 .section-title {
   font-size: 2rem;
-  border-bottom: var(--minor-color) 3px solid;
+  border-bottom: var(--decorative-color) 3px solid;
 }
 
 .section-lead {
@@ -211,7 +211,7 @@ body {
 }
 
 #nav-list .nav-item a:hover > .fas {
-  color: var(--minor-color);
+  color: var(--decorative-color);
 }
 
 #nav-checkbox:checked ~ #nav-list {
@@ -296,7 +296,7 @@ body {
 
 #scrolling-text {
   position: absolute;
-  color: var(--minor-color);
+  color: var(--decorative-color);
   bottom: 1em;
   left: 50%;
   transform: translateX(-50%);
@@ -338,7 +338,7 @@ body {
 
 #about {
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--background-color-1);
 }
 
 #about .container {
@@ -356,13 +356,13 @@ body {
 #about-image {
   width: max(200px, 100%);
   border-radius: 50%;
-  border: var(--minor-color) 2px solid;
+  border: var(--decorative-color) 2px solid;
 }
 
 #about-details {
   font-size: 1.2rem;
   padding: 1em;
-  border-left: var(--minor-color) 2px solid;
+  border-left: var(--decorative-color) 2px solid;
 }
 
 @media (max-width: 769px) {
@@ -372,7 +372,7 @@ body {
   }
   #about-details {
     border-left: none;
-    border-top: var(--minor-color) 2px solid;
+    border-top: var(--decorative-color) 2px solid;
     grid-column: span 2;
   }
 }
@@ -390,12 +390,13 @@ body {
 
 #works {
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--background-color-2);
 }
 
 #works .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* min(300px, 100%) makes sure column size can shrink to less than 300px for smaller screen */
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   place-items: center;
   gap: 2rem;
 }
@@ -427,7 +428,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-  color: var(--minor-color);
+  color: var(--decorative-color);
   background-color: rgba(12, 12, 12, 0.7);
   transition: transform 500ms linear;
 }
@@ -453,10 +454,6 @@ body {
   transition: color 300ms 500ms linear;
 }
 
-#works .work-item:hover {
-  box-shadow: 0 0 5px 3px var(--text-color);
-}
-
 #works .work-item:hover .work-item-cover::after {
   transform: translateY(-400px);
 }
@@ -467,7 +464,7 @@ body {
 }
 
 #works .work-item:hover .work-item-github {
-  color: var(--minor-color);
+  color: var(--decorative-color);
 }
 
 @media (max-width: 769px) {
@@ -500,7 +497,7 @@ body {
 
 #contact {
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--background-color-1);
 }
 
 #contact .container {
@@ -518,14 +515,14 @@ body {
 #contact-image {
   width: max(200px, 100%);
   border-radius: 50%;
-  border: var(--minor-color) 2px solid;
+  border: var(--decorative-color) 2px solid;
 }
 
 #contact-form {
   box-sizing: border-box;
   width: 80%;
   padding: 1em 2em;
-  border-right: var(--minor-color) 2px solid;
+  border-right: var(--decorative-color) 2px solid;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -552,7 +549,7 @@ body {
 
 #contact-form input:focus,
 #contact-form textarea:focus {
-  box-shadow: 0 0 1px 1px var(--minor-color);
+  box-shadow: 0 0 1px 1px var(--decorative-color);
 }
 
 #contact-form .input-empty-warning {
@@ -570,7 +567,7 @@ body {
   padding: 0.5em 1em;
   align-self: center;
   background-color: var(--text-color);
-  color: var(--primary-color);
+  color: black;
   transition: all 0.5s;
 }
 
