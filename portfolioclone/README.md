@@ -1,6 +1,6 @@
 # Portfolio Site Clone
 
-This is my first uploaded project. It's not so difficult. It's also my first clone project. There will be more clones coming. One thing special about this site is a simple mode switch feature. The page can be rendered either in light mode or dark mode. User's mode choice is stored in local storage. It will be remembered and automatically applied next time the user visits.
+This is my first project. It's not so difficult. It's also my first clone project. There will be more clones coming. One thing special about this site is a simple mode switch feature. The page can be rendered either in light mode or dark mode. User's mode choice is stored in local storage. It will be remembered and automatically applied next time the user visits.
 
 ### _Why and how do I do site clones?_
 

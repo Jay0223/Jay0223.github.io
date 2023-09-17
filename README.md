@@ -2,23 +2,32 @@ Click [here](https://jay0223.github.io/#contact) to send me an email and tell me
 
 ---
 
-### Major Updates Log
+## What I've been up to
 
-- Feb.17 2022
+- ### Sep 2023
 
-1. Designed a website for Chinese restaurant. [Check it out](https://jay0223.github.io/restaurant/).
+1. Functional contact form on portfolio home page.
+2. Minor fixes and changes on earlier projects.
+
+- ### Aug 2023
+
+Busy moving from Minnesota to Wisconsin...
+
+- ### Jul 2023
+
+Chinese restaurant website. [Check it out](https://jay0223.github.io/restaurant/).
 
 ![chinese restaurant](./img/restaurants-cover.jpg)
 
-- Feb.7 2022
+- ### Jun 2023
 
-1. First uploaded project. An easy site clone. [Check it out](https://jay0223.github.io/portfolioclone/).
+First project. An easy site clone. [Check it out](https://jay0223.github.io/portfolioclone/).
 
 ![site clone](./img/clone-portfolio1-cover.jpg)
 
-2. Inspired by [Dennis Ivanov](http://dennisivy-portfolio.s3-website-us-west-2.amazonaws.com/)
+Inspired by [Dennis Ivanov](http://dennisivy-portfolio.s3-website-us-west-2.amazonaws.com/)
 
-- Jan. 27 2022
+- ### May 2023
 
 1. Portfolio landing page launched.
 
