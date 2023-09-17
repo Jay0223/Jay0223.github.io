@@ -1,13 +1,6 @@
 :root {
   --main-font: "Roboto Mono", monospace;
   --title-font: "Russo One", sans-serif;
-  --primary-bg: #ddd;
-  --secondary-bg: #fff;
-  --card-bg: #f0ead6;
-  --border-color: #777;
-  --btn-color: #000;
-  --txt-color: #000;
-
   scroll-behavior: smooth;
 }
 

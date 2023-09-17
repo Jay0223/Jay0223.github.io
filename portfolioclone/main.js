@@ -1,21 +1,19 @@
-const link = document.querySelector(".dark-theme-style");
+const link = document.querySelector("#theme-style");
 const themeBtnContainer = document.querySelector(".theme-btns");
 let theme;
 
 const setTheme = function (t) {
   localStorage.setItem("theme", t);
   theme = t;
-  return true;
 };
 themeBtnContainer.addEventListener("click", (e) => {
-  e.target.classList.contains("theme-light") &&
-    theme === "dark" &&
-    setTheme("light") &&
-    link.setAttribute("href", "");
-  e.target.classList.contains("theme-dark") &&
-    theme === "light" &&
-    setTheme("dark") &&
+  if (e.target.classList.contains("theme-light") && theme === "dark") {
+    setTheme("light");
+    link.setAttribute("href", "light-style.css");
+  } else if (e.target.classList.contains("theme-dark") && theme === "light") {
+    setTheme("dark");
     link.setAttribute("href", "dark-style.css");
+  }
 });
 
 const init = function () {
@@ -24,6 +22,7 @@ const init = function () {
     link.setAttribute("href", "dark-style.css");
   } else {
     setTheme("light");
+    link.setAttribute("href", "light-style.css");
   }
 };
 init();
