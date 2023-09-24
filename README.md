@@ -8,6 +8,9 @@ Click [here](https://jay0223.github.io/#contact) to send me an email and tell me
 
 1. Functional contact form on portfolio home page.
 2. Minor fixes and changes on earlier projects.
+3. New Project - [LA Mountains page](https://jay0223.github.io/lamountains/)
+
+![Los Angeles Mountains](./img/lamountain-cover.jpg)
 
 - ### Aug 2023
 
