@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../img/matrix.jpg");
+  background-size: cover;
+  height: 100vh;
+  font-size: 20px;
+  /* to put container to center */
+  display: flex;
+}
+
+#game-board {
+  min-width: 1200px;
+  height: 500px;
+  /* to put game-board to center */
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  outline: none;
+  padding: 30px 20px;
+  border-radius: 10px;
+  border: 1px solid #999;
+  display: grid;
+  grid-template-areas:
+    "heading heading heading"
+    "instruction input result"
+    "instruction action result";
+  grid-template-columns: 300px auto 300px;
+}
+
+#heading {
+  grid-area: heading;
+  padding-block: 5px;
+  place-self: center;
+}
+
+/* instruction */
+
+#instruction {
+  grid-area: instruction;
+}
+
+#instruction-wrapper {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+#instruction-wrapper .info {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 10px;
+}
+
+#scroll-arrows {
+  display: flex;
+  padding: 10px 30px;
+}
+
+#scroll-arrows button {
+  cursor: pointer;
+  border: 1px black solid;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+/* make sure right arrow pushed to the right if not hidden */
+#right-arrow {
+  margin-left: auto;
+}
+
+/* input */
+#input {
+  grid-area: input;
+  display: flex;
+  gap: 20px;
+  place-self: center;
+}
+#input .digit {
+  width: 60px;
+  height: 60px;
+  border: 1px #999 solid;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 32px;
+}
+
+#input .error-digit {
+  border: 1px red solid;
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* action */
+#action {
+  grid-area: action;
+  text-align: center;
+}
+
+.message1 {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.message2 {
+  margin-top: 30px;
+  opacity: 0;
+}
+
+.error-message {
+  color: red;
+  opacity: 1;
+}
+
+.success-message {
+  color: darkgreen;
+  opacity: 1;
+}
+
+#button-wrapper {
+  margin-top: 30px;
+}
+
+#action button {
+  width: 100px;
+  cursor: pointer;
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 24px;
+  margin-inline: 10px;
+}
+
+/* result */
+#result {
+  grid-area: result;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+  max-height: 300px;
+}

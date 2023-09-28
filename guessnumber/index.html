@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Can you Guess it?</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <div id="game-board">
+      <h1 id="heading">Can you guess it?</h1>
+      <div id="instruction">
+        <div id="instruction-wrapper">
+          <p class="info">
+            In this game, you have 10 chances to guess a four-digit number. It
+            has to be four differnt digits, so the answer won't be like 6666, or
+            1212. Please note the first digit could be 0.
+          </p>
+          <p class="info">
+            You will see how good was your guess in the right panel. "xA" means
+            among the four digits you guessed, x of them are correct for BOTH
+            number and position. "yB" means y of the digits are ONLY correct for
+            number.
+          </p>
+          <p class="info">
+            For example, if the answer is 0239 and your guess is 1309, the
+            result would be "1A2B" since you correctly guessed "9" to be fourth
+            digit (1A) and you are also right that "0" and "3" are in the answer
+            but not at your guessed position (2B). If you could get a "4A0B" in
+            10 tries, you win the game!
+          </p>
+          <p class="info">
+            After a few guesses, you will become more and more sure what digits
+            are in the answer. Based on your guess history, with luck and your
+            high IQ, you will beat the game.
+          </p>
+          <p class="info">
+            If you feel this is too difficult, don't forget you have and only
+            have 1 hint. Use it wisely
+          </p>
+          <p class="info">
+            It can be a real chanllege. Are you up to it? <br /><br />Extra
+            Hint: DevTools console knows better.^_^
+          </p>
+        </div>
+        <div id="scroll-arrows">
+          <button id="left-arrow">&lt;Prev</button>
+          <button id="right-arrow">Next&gt;</button>
+        </div>
+      </div>
+      <div id="input">
+        <input
+          type="text"
+          class="digit"
+          id="digit-1"
+          maxlength="1"
+          title="first digit"
+        />
+        <input
+          type="text"
+          class="digit"
+          id="digit-2"
+          maxlength="1"
+          title="second digit"
+        />
+        <input
+          type="text"
+          class="digit"
+          id="digit-3"
+          maxlength="1"
+          title="third digit"
+        />
+        <input
+          type="text"
+          class="digit"
+          id="digit-4"
+          maxlength="1"
+          title="fourth digit"
+        />
+      </div>
+      <div id="action">
+        <div class="message1">You have <span>10</span> chances left.</div>
+        <div class="message2">...</div>
+        <div id="button-wrapper">
+          <button id="try">Try</button>
+          <button id="hint">Hint</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
