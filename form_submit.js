@@ -36,11 +36,11 @@ const successfulSubmission = () => {
   contactMessageInput.value = "";
   contactSend.textContent = "Thank You!";
   contactSend.style.setProperty("background-color", "green");
-  contactSend.style.setProperty("color", "var(--text-color)");
+  contactSend.style.setProperty("color", "#fbf7ef");
   setTimeout(() => {
     contactSend.textContent = "Send";
-    contactSend.style.setProperty("background-color", "var(--text-color");
-    contactSend.style.setProperty("color", "var(--primary-color)");
+    contactSend.style.setProperty("background-color", "#fbf7ef");
+    contactSend.style.setProperty("color", "black");
   }, 2000);
 };
 
