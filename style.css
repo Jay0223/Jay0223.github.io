@@ -88,6 +88,10 @@ body {
   background-color: #cc6699;
 }
 
+.game-tag {
+  background-color: purple;
+}
+
 .special-tag {
   background-color: #0093b8;
 }

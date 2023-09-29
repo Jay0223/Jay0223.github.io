@@ -78,20 +78,21 @@ inputElementWrapper.addEventListener("keydown", (e) => {
 });
 
 // focus on next input automaticly
-inputElementWrapper.addEventListener("keyup", (e) => {
-  if (e.key !== "Tab" && e.key !== "Enter") {
-    const currentInputIndex = inputElementsArray.indexOf(e.target);
-    const nextInputIndex = (currentInputIndex + 1) % 4;
-    if (inputElementsArray[nextInputIndex].hasAttribute("disabled")) {
-      const nextAbledInput = inputElementsArray[(nextInputIndex + 1) % 4];
-      nextAbledInput.focus();
-      nextAbledInput.select();
-    } else {
-      inputElementsArray[nextInputIndex].focus();
-      inputElementsArray[nextInputIndex].select();
-    }
-  }
-});
+// ---- for testing convenience, user experience not perfect
+// inputElementWrapper.addEventListener("keyup", (e) => {
+//   if (e.key !== "Tab" && e.key !== "Enter") {
+//     const currentInputIndex = inputElementsArray.indexOf(e.target);
+//     const nextInputIndex = (currentInputIndex + 1) % 4;
+//     if (inputElementsArray[nextInputIndex].hasAttribute("disabled")) {
+//       const nextAbledInput = inputElementsArray[(nextInputIndex + 1) % 4];
+//       nextAbledInput.focus();
+//       nextAbledInput.select();
+//     } else {
+//       inputElementsArray[nextInputIndex].focus();
+//       inputElementsArray[nextInputIndex].select();
+//     }
+//   }
+// });
 
 tryButton.addEventListener("click", () => {
   resetElements();

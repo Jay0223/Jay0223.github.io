@@ -12,6 +12,10 @@ Click [here](https://jay0223.github.io/#contact) to send me an email and tell me
 
 ![Los Angeles Mountains](./img/lamountain-cover.jpg)
 
+4. New Project - [Guess Number Game](https://jay0223.github.io/guessnumber/)
+
+![Guess Number Game](./img/guessnumber-cover.jpg)
+
 - ### Aug 2023
 
 Busy moving from Minnesota to Wisconsin...
