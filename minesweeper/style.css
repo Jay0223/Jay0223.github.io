@@ -1,0 +1,83 @@
+:root {
+  /* for JS to control pseudo elements display */
+  --pseudo-display-block: block;
+  --pseudo-display-none: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-block: 100px;
+}
+
+#gameboard {
+  outline: 2px black solid;
+}
+
+#controls {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  outline: 1px black solid;
+}
+
+#minefield {
+  display: grid;
+  grid: repeat(10, 30px) / repeat(10, 30px);
+  background: #ddd;
+}
+
+.cell {
+  outline: 1px white solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+}
+
+.cell::before {
+  content: "";
+  display: var(--pseudo-display-block);
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  box-shadow: inset 2px 2px 1px #eee, inset -2px -2px 1px #aaa;
+}
+
+.cell[data-surrounding-mine-count="mine"] {
+  background-color: red;
+}
+.cell[data-surrounding-mine-count="1"] {
+  color: green;
+}
+.cell[data-surrounding-mine-count="2"] {
+  color: blue;
+}
+.cell[data-surrounding-mine-count="3"] {
+  color: red;
+}
+.cell[data-surrounding-mine-count="4"] {
+  color: purple;
+}
+.cell[data-surrounding-mine-count="5"] {
+  color: darkblue;
+}
+.cell[data-surrounding-mine-count="6"] {
+  color: darkorange;
+}
+.cell[data-surrounding-mine-count="7"] {
+  color: darkgreen;
+}
+.cell[data-surrounding-mine-count="8"] {
+  color: black;
+}
