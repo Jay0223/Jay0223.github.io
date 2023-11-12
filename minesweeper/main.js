@@ -1,10 +1,35 @@
-const controls = document.getElementById("controls");
+const flagCount = document.querySelector("#flag-count span");
+const faceIcon = document.getElementById("game-status");
+const select = document.querySelector("select");
 const minefield = document.getElementById("minefield");
+const dialog = document.querySelector("dialog");
 const cellsRevealed = new Set();
 const cellsFlagged = new Set();
-let minefieldSize = 100;
-let mineCount = 10;
 let gameLost = false;
+let minefieldSize, mineCount, mineLocations;
+
+// disable right click context menu in minefield
+minefield.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  return false;
+});
+
+// set difficulties
+function setDifficulty(d) {
+  switch (d) {
+    case "medium":
+      minefieldSize = 144;
+      mineCount = 25;
+      break;
+    case "hard":
+      minefieldSize = 256;
+      mineCount = 50;
+      break;
+    default:
+      minefieldSize = 81;
+      mineCount = 10;
+  }
+}
 
 function initiateGame(size, count) {
   // create cells
@@ -21,7 +46,6 @@ function initiateGame(size, count) {
     newCell.dataset.status = "unrevealed";
     minefield.appendChild(newCell);
   }
-
   // create random mine locations
   const locations = new Set();
   while (locations.size < count) {
@@ -43,54 +67,82 @@ function initiateGame(size, count) {
       }
     });
   });
+
+  // add event listener back for new game
+  minefield.addEventListener("mouseup", clickOnCell);
+
+  flagCount.textContent = `00 / ${count}`;
+
   return locations;
 }
 
-// initiate games and return mine locations (set)
-let mineLocations = initiateGame(minefieldSize, mineCount);
+setDifficulty(select.value);
+mineLocations = initiateGame(minefieldSize, mineCount);
 
-// disable right click context menu in minefield
-minefield.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-  return false;
+// Reset game listner
+faceIcon.addEventListener("click", () => {
+  minefield.innerHTML = "";
+  setDifficulty(select.value);
+  mineLocations = initiateGame(minefieldSize, mineCount);
+  faceIcon.innerHTML = "🙂";
+  gameLost = false;
+  cellsFlagged.clear();
+  cellsRevealed.clear();
 });
 
-minefield.addEventListener("mouseup", (e) => {
-  if (e.target.classList.contains("cell")) {
-    if (e.button === 0) {
-      revealCells(minefieldSize, e.target);
-      // need to check if game already lost by revealing a mine cell
-      if (
-        gameLost === false &&
-        cellsRevealed.size === minefieldSize - mineCount
-      ) {
+/*---------------------------------------------------------------------*/
+
+function clickOnCell(event) {
+  if (event.target.classList.contains("cell")) {
+    if (event.button === 0) {
+      revealCells(minefieldSize, event.target);
+      if (gameLost === true) {
+        console.log("LOST~~~");
+        minefield.removeEventListener("mouseup", clickOnCell);
+        faceIcon.innerHTML = "🤯";
+        dialog.querySelector("p").textContent = "You Lose ~~";
+        dialog.showModal();
+      } else if (cellsRevealed.size === minefieldSize - mineCount) {
         // win by revealing all non-mine cells
         console.log("WON!!!!!");
+        minefield.removeEventListener("mouseup", clickOnCell);
+        faceIcon.innerHTML = "😎";
+        dialog.querySelector("p").textContent = "You Win!!";
+        dialog.showModal();
       }
     }
-    if (e.button === 2) {
-      flagCells(e.target);
+    if (event.button === 2) {
+      flagCells(event.target);
       if (
         cellsFlagged.size === mineCount &&
         [...cellsFlagged].every((id) => mineLocations.has(id))
       ) {
         // win by flagging all mines
         console.log("WON!!!!!");
+        minefield.removeEventListener("mouseup", clickOnCell);
+        faceIcon.innerHTML = "😎";
+        dialog.querySelector("p").textContent = "You Win!!";
+        dialog.showModal();
       }
     }
   }
-});
+}
 
 // using recursion, a function calling itself.
 function revealCells(size, cell) {
   // the if condition makes sure recursion won't go infinite
   if (!cellsRevealed.has(cell)) {
     cellsRevealed.add(cell);
+    if ((cell.dataset.status = "flagged")) {
+      cellsFlagged.delete(+cell.dataset.id);
+      flagCount.textContent =
+        String(cellsFlagged.size).padStart(2, "0") + ` / ${mineCount}`;
+    }
     cell.textContent = cell.getAttribute("data-surrounding-mine-count");
     cell.dataset.status = "revealed";
     if (cell.dataset.surroundingMineCount === "x") {
       gameLost = true;
-      console.log("game over");
+      return;
     } else if (+cell.dataset.surroundingMineCount === 0) {
       cell.textContent = "";
       const cellsAround = getCellsAround(size, cell);
@@ -106,10 +158,14 @@ function flagCells(cell) {
     cell.dataset.status = "flagged";
     cell.textContent = "🚩";
     cellsFlagged.add(+cell.dataset.id);
+    flagCount.textContent =
+      String(cellsFlagged.size).padStart(2, "0") + ` / ${mineCount}`;
   } else if (cell.dataset.status === "flagged") {
     cell.dataset.status = "question";
     cell.textContent = "?";
     cellsFlagged.delete(+cell.dataset.id);
+    flagCount.textContent =
+      String(cellsFlagged.size).padStart(2, "0") + ` / ${mineCount}`;
   } else if (cell.dataset.status === "question") {
     cell.dataset.status = "unrevealed";
     cell.textContent = "";
@@ -188,3 +244,22 @@ function getCellsAround(size, cell) {
 
   return cellsAround;
 }
+
+// close modal
+dialog.addEventListener("click", (e) => {
+  const dialogDimension = dialog.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimension.left ||
+    e.clientX > dialogDimension.right ||
+    e.clientY < dialogDimension.top ||
+    e.clientY > dialogDimension.bottom
+  ) {
+    dialog.close();
+  }
+});
+
+// disable right click context menu in dialog
+dialog.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  return false;
+});

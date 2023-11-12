@@ -16,12 +16,35 @@
 }
 
 #controls {
-  height: 50px;
+  height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   outline: 1px black solid;
+}
+
+/* make sure game-status is centered */
+#flag-count {
+  width: calc(50% - 20px);
+  font-size: 20px;
+}
+
+#game-status {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px black solid;
+  background-color: #ddd;
+  box-shadow: inset 3px 3px #eee, inset -3px -3px #aaa;
+  cursor: pointer;
+}
+
+#difficulty {
+  margin-left: auto;
+  font-size: 15px;
 }
 
 #minefield {
@@ -73,4 +96,19 @@
 }
 .cell[data-status="revealed"][data-surrounding-mine-count="8"] {
   color: black;
+}
+
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 20px 50px;
+  font-size: 25px;
+  border: none;
+}
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 0.5;
 }

@@ -10,9 +10,20 @@
   <body>
     <div class="container">
       <div id="gameboard">
-        <div id="controls">🚩</div>
+        <div id="controls">
+          <p id="flag-count">🚩: <span></span></p>
+          <p id="game-status">🙂</p>
+          <select id="difficulty">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
         <div id="minefield"></div>
       </div>
     </div>
+    <dialog>
+      <p></p>
+    </dialog>
   </body>
 </html>
