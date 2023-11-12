@@ -4,6 +4,12 @@ Click [here](https://jay0223.github.io/#contact) to send me an email and tell me
 
 ## What I've been up to
 
+- ### Nov 2023
+
+1. New Project - [Minesweeper](https://jay0223.github.io/minesweeper/)
+
+![Minesweeper](./img/minesweeper-cover.jpg)
+
 - ### Sep 2023
 
 1. Functional contact form on portfolio home page.
